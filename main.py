@@ -1,5 +1,5 @@
-import utils
-from operation import Operation
+from src import utils
+from src.operation import Operation
 
 
 def main():
