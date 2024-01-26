@@ -1,7 +1,6 @@
-import json
+import pytest
 
 from src import utils
-import pytest
 
 
 def test_utils_file_exist():
@@ -27,4 +26,3 @@ def test_load_json_no_file():
 def test_load_try_no_json():
     with pytest.raises(BaseException):
         assert utils.load_json("utils.py")
-

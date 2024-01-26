@@ -55,7 +55,6 @@ def test_operation__str__(dict_list_fixture, dict_list_str_fixture):
         assert Operation(dict_list_fixture[i]).__str__() == dict_list_str_fixture[i]
 
 
-
 @pytest.fixture
 def operations(one_right_dict_fixture, one_dict_no_from_fixture):
     # op1 2019-08-26T10:50:58.294041
@@ -95,4 +94,3 @@ def test_operation__verify_data(one_right_dict_fixture):
     op1 = Operation(one_right_dict_fixture)
     with pytest.raises(TypeError):
         op1.__eq__('no_operation_no_datetime')
-
