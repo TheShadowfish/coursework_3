@@ -3,9 +3,13 @@ from src.operation import Operation
 
 
 def main():
-    #print(f'Здесь будут вызовы функций: чтение файла, запись экземпляров класса "операция" в массив, сортировка, вывод')
-    file_name_path = utils.get_file_path("operations.json")
-    json_data = utils.load_json(file_name_path)
+    FILENAME = "operations.json"
+
+    file_name_path = utils.file_exist(FILENAME)
+    if file_name_path is None:
+        print(f"Файл {FILENAME} не найден по указанному пути")
+        exit(1)
+    json_data = utils.load_json(FILENAME)
 
     operations = []
 
@@ -39,7 +43,13 @@ def main():
         if counter < 1:
             print(f"Последние {latest_operations} успешных операций выведены")
             break
-
+    # num = None
+    try:
+        file_name_path = 'main.py'
+        json_data = utils.load_json(file_name_path)
+        print(f"<type> {type(json_data)}")
+    except Exception as e:
+        print("Файл точно не является JSON " + str(e))
 
 # начало программы
 if __name__ == '__main__':
